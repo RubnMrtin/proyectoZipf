@@ -9,30 +9,18 @@
 # Rubén Martín Moreno
 #
 
-
-# Importo las funciones que he creado
 import modulo_funciones as func
 
-# Cargo el texto y lo leo en la variable texto_sin_limpiar
-capitulo1 = open('texto-prueba3.txt', 'r')
-texto_sin_limpiar = capitulo1.read()
 
-# Limpio el texto de caracteres especiales y lo dejo todo en minúscula
-texto_limpio = func.limpia_texto(texto_sin_limpiar)
+#func.full_program()
 
-# Separa el texto en sus frases
-frases = func.por_frases(texto_limpio)
-
-# Separa las frases en palabras
-frases = func.por_palabras(frases)
-
-# Crea como claves las palabras y como valores las veces que están repetidas en el texto
-diccionario = func.crea_dict(frases)
-
-# Graba los valores en un archivo llamado 'resultado_completo'
-lista_ordenada = func.escribe_lista(diccionario, 'resultado_completo.txt')
-
-# Cierra el archivo abierto
-capitulo1.close()
-
-
+#import Gnuplot
+ 
+#gp = Gnuplot.Gnuplot(persist = 1)
+#gp('set data style lines')
+ 
+#graf1 = [[1,2],[3,4],[5,6]]
+#graf2 = [[1,3],[2,-1],[3,6],[4,2],[5,0]]
+#plot1 = Gnuplot.PlotItems.Data(graf1, with_="lines", title="Temp./Tiempo")
+#plot2 = Gnuplot.PlotItems.Data(graf2, with_="lines", title="Estado Mental del desarrollador de UCLMWiFi")
+#gp.plot(plot1, plot2)
