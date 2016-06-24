@@ -14,7 +14,7 @@
 import modulo_funciones as func
 
 # Cargo el texto y lo leo en la variable texto_sin_limpiar
-capitulo1 = open('texto-prueba.txt', 'r')
+capitulo1 = open('texto-prueba3.txt', 'r')
 texto_sin_limpiar = capitulo1.read()
 
 # Limpio el texto de caracteres especiales y lo dejo todo en minúscula
@@ -29,8 +29,10 @@ frases = func.por_palabras(frases)
 # Crea como claves las palabras y como valores las veces que están repetidas en el texto
 diccionario = func.crea_dict(frases)
 
-# Muestra las claves y los valores
-func.muestra_valores(diccionario)
+# Graba los valores en un archivo llamado 'resultado_completo'
+lista_ordenada = func.escribe_lista(diccionario, 'resultado_completo.txt')
 
 # Cierra el archivo abierto
 capitulo1.close()
+
+

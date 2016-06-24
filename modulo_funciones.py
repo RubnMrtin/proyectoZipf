@@ -15,11 +15,12 @@ def limpia_texto(text):
 	texto = text
 	texto = texto.lower()	# Convierte todo el texto a minúscula
 	
-	lista_caracteres = [',', '(', ')', '¡', '!', '¿', '?', '\'', '#', '$', '\%', '&', '*', '+', '-', '\\', '_', ':', ';', '<', '>', '=', '@', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '/', '[', ']', '^', '{', '}', '|', '~', '\n', '“', '”', '―']	# Lista de los caracteres que queremos eliminar
+	lista_caracteres = [',', '(', ')', '¡', '!', '¿', '?', '\'', '#', '$', '\%', '&', '*', '+', '-', '\\', '_', ':', ';', '<', '>', '=', '@', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '/', '[', ']', '^', '{', '}', '|', '~', '\n', '“', '”', '―', '…', '─']	# Lista de los caracteres que queremos eliminar
 
 	for caracter in lista_caracteres:
 		texto = texto.replace(caracter, "")
 	return texto
+
 
 def por_frases(text):
 	'''Divide un texto en cada una de sus frases usando como punto de separación el '.' '''
@@ -67,3 +68,17 @@ def muestra_valores(diccionario):
 
 	for palabra,veces in diccionario.items():
 		print ' \'%s\' se encuentra %s veces' %(palabra,veces)
+
+
+def escribe_lista(diccionario, archivo):
+	'''Escribe los resultados en un archivo de texto, ordenándolos previamente de mayor a menor'''
+
+	lista = diccionario.items()
+	lista.sort(key=lambda x: x[1], reverse = True)
+
+	input_filename = open(archivo, "w")
+	for par in lista:
+		linea = '%s se encuentra %s veces\n' %(par[0],par[1])
+		input_filename.write(linea)
+	input_filename.close()
+	return lista
