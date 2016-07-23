@@ -26,9 +26,9 @@ def validar_salida():
 	'''Valida el valor de salida'''
 
 	while True:
-		archivo = raw_input("Escribe el nombre de archivo en el que quieras guardar los datos(sin extensión): ")
+		archivo = raw_input("Escribe el nombre de archivo en el que quieras guardar los datos(con extensión): ")
 		try:
-			archivo = str(archivo)+'.txt'
+			archivo = str(archivo)
 			return archivo
 		except ValueError:
 			print "ATENCIÓN: Debe ingresar un archivo."
